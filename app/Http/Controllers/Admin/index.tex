@@ -1,0 +1,112 @@
+เป็นการ ส่วนของ UsersControllers.php ที่อ.ให้ลองหลายๆรูปแบบ
+    public function index()
+    {
+        /*
+        $data = [
+            'name' => 'My Name',
+            'surname' => 'My SurName',
+            'email' => 'myemail@gmail.com'
+        ];
+ 
+         $user = UserMod::find(1);
+         $mods = UserMod::all();
+ 
+         return view('template', compact('data', 'user', 'mods'));
+         */
+ 
+        // $mods = UserMod::all();
+        // return view('template', compact('mods'));//คำสั่งcompactจะนำmods และส่งไปทุกตัว
+
+    
+
+    // $item = [
+    //     'item1' => 'My Value1',
+    //     'item2' => 'My Value2'
+    // ];
+
+    // $results = [
+    //     'data' => $data,
+    //     'item' => $item
+    // ];
+
+    // return view('template', $results);
+
+
+        // --------------------------------
+    //     $data = [ //การส่งแบบarray
+    //         'name' => 'My Name',
+    //         'surname' => 'My SurName',
+    //         'email' => 'myemail@gmail.com'
+    //     ];
+
+    //    return view('template', $data);
+
+
+        /*
+        return view('template')
+        ->with('name', 'My Name')
+        ->with('surname', 'My SurName')
+        ->with('email', 'myemail@gmail.com');
+            */
+        //return view('template')->with('name', 'My Name');ส่งไปหน้า .blade และส่งค่าไปด้วย
+
+        //return view('template');//ไปเรียกหน้า template.blade.php **สำคัญพวกหน้าpageต้องมีblade
+
+
+
+        // $shop = ProductMod::find(1)->shop;
+        // echo "<br />Product is belong to shop :".$shop->user->name;//produc idเป็น1ไปจอย กับshop ที่ id เป็น1
+
+
+       /* // $products = \App\Model\Shop::find(1)->products;
+        $products = ShopMod::find(1)->products;
+        //dd($products);
+        foreach ($products as $item) {//สั่งprint $productsจนถึงตัวสุดท้าย
+            echo"<br /> product :".$item->name."<br /> Status : ".$item->status ;
+        /*        }
+
+
+
+
+        //sql
+        // $mods = UserMod::all();
+        // $mods = UserMod::where('active', 1) //where active =1
+        //                 ->where('name','link','%user2%')
+        //        ->orderBy('name', 'desc')
+        //        ->take(10)//เอาแค่10อัน
+        //        ->get();//ต้องติดgetเมื่อใช้ where
+        //------------------------------------------
+        // $user = UserMod::find(1);
+        // echo "<br> User: ". $user->name;
+
+        // $shop = UserMod::find(1)->shop;
+        // echo "<br> Shop Name: ".$shop->name;//จิ่มไปที่shopเลย
+       
+        // $shop = UserMod::find(1);
+        // echo "<br> Shop Name2: ". $user->shop->name;//สามารถเขียนแบบนี้ก็ได้แบบ$shopข้างบนเช่นกัน
+
+        // $shop = UserMod::find(1);
+        // echo "<br>". $shop->age;//ตัวแปรshop ถูกjoinกับ userแล้วจึงสามารถเรียก dataใน userได้
+        // ---------------------------------------
+        // $shop =Shopmod::find(1);
+        // echo "<br /> Shop :".$shop->name;//ชื่อ shop name
+        // echo "<br /> name user ที่เป็นเจ้าของshop1:".$shop->user->name; //ชื่อเจ้าของ shop
+
+        //-----------------------------------------------
+        // $mod = usermod::find(1);//หาusermodที่1
+        // echo "name :".$mod->name."<br/><br/>";
+        // --------------------------------
+        // $mods = usermod::find([1,3,4]);
+        // foreach ($mods as $itemxx) {
+        //     echo $itemxx->name." Email : ".$itemxx->email." Age: ".$itemxx->age."<br /><br />";
+        //     //ตัวแปรจำนวน($itemxx)-> ชื่อข้อมูลในtableที่ต้องการโชว์
+        // }
+        // // --------------------------------
+        // echo "name :".$mod->name;
+      
+        // $max = UserMod::where('active', 1)->max('age');
+        // echo " age :".$max;
+
+        //   $count = UserMod::where('active', 1)->count();
+        // echo "จำนวน active ที่ = 1 :".$count;
+*/

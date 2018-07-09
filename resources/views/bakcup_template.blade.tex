@@ -1,0 +1,37 @@
+
+<html lang="{{ app()->getLocale() }}">
+    <head>
+        <meta charset="utf-8">
+        <title> Laravel </title>
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+</head>
+<style></style>
+<body>
+<!-- <h0>Hello world</h0> <br> -->
+
+
+{{ print_r($data) }}
+
+<h1> Show User Single Object from Model </h1>
+{{ $user->name.' : '.$user->surname }}
+
+<h1> Show mods Multiple Objects From Model</h1>
+@if($mods)
+    <ul>
+    @foreach($mods as $item)
+        <li>{{ $item->name.' : '.$item->surname }}</li>
+    @endforeach
+    </ul>
+@endif
+
+
+
+<!-- หากส่งมาแบบarray จะprint แบบนี้
+{{ print_r($data) }}
+{{ print_r($item) }} -->
+
+
+<!--  รับค่ามาจากการreturnของ UserController -->
+
+</body>
+</html>

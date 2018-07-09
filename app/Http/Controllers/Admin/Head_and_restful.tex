@@ -1,0 +1,95 @@
+//สร้างตัวแปร Usermod โดยเรียกฟังชั่นจากไฟล์ user.php
+use App\User as UserMod;//adบบรนทัด18
+use App\Model\shop as Shopmod;//สร้างให้shopmodel =shopข้างหน้า
+use App\Model\Product as ProductMod;
+
+
+  
+    public function index()
+    {
+        
+        $mods = UserMod::paginate(5);//แก้เพื่อเวลาทำpagination จะให้มีกี่แถวต่อหน้า
+        return view('admin.user.lists',compact('mods'));
+
+
+    }
+
+    public function create()
+    {
+        return view ('admin.user.create');
+        //เรียกcreate.blade.php โดยที่ createดังกล่าวต้อง ประกาศ extends และ section
+    }
+
+    public function store(Request $request)
+    {
+            request()->validate([
+                'name' => 'required|min:2|max:50',
+                'surname' => 'required|min:2|max:50',
+                'mobile' => 'required|numeric',
+                'email' => 'required|email|unique:users',
+                'password' => 'required|min:6',
+                'confirm_password' => 'required|min:6|max:20|same:password',
+            ], [
+                'name.required' => 'Name is required',
+                'name.min' => 'Name must be at least 2 characters.',
+                'name.max' => 'Name should not be greater than 50 characters.',
+            ]); 
+            $mod = new UserMod;
+            $mod->email    = $request->email;
+            $mod->password = bcrypt($request->password);
+            $mod->name     = $request->name;
+            $mod->surname  = $request->surname;
+            $mod->mobile   = $request->mobile;
+            $mod->age      = $request->age;
+            $mod->address  = $request->address;
+            $mod->city     = $request->city;
+            $mod->save();
+            
+        // เอาnameจากกล่องinput ทีเราพิมใว้ใน create.blade.php
+        echo "success .";
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }

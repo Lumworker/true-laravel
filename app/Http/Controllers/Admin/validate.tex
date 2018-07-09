@@ -1,0 +1,18 @@
+เป็นการvalidate ค่าที่กรอกต้องเป็นยังไง
+request()->validate([
+                'name' => 'required|min:2|max:50', //ชื่อมีอย่างต่ำ2ตัว
+                'surname' => 'required|min:2|max:50',
+                'mobile' => 'required|numeric', //โทรสับเป็นแต่ตัวเลข
+                'email' => 'required|email|unique:users', //อีเมลต้องเป็นแบบอีเมล(แบบอีเมลต้อง AAA@AA.com)
+                'password' => 'required|min:6', //passwordต้อง6ตัวขุ้นไป
+                'confirm_password' => 'required|min:6|max:20|same:password', //confirm_passwordต้อง6ตัวขึ้นไปและเหหมือนกัน password
+            ], [
+                'name.required' => 'Name is required',
+                'name.min' => 'Name must be at least 2 characters.',
+                'name.max' => 'Name should not be greater than 50 characters.',
+
+
+
+
+
+   
